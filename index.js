@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postgres');
+const sequelize = new Sequelize(process.env.DATABASE_URL ||  'postgres://postgres:secret@localhost:5432/postgres');
 const User = sequelize.define('user', {
     email: {
       type: Sequelize.STRING,
@@ -27,3 +27,5 @@ sequelize.sync()
         console.error('Unable to create tables, shutting down...', err);
         process.exit(1);
     })
+
+module.exports = { Task, User };
