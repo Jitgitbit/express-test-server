@@ -17,6 +17,10 @@ app.get('/users', async (req, res) => {
   res.send(users);
 })
 
+app.post('/echo', (req, res) => {
+  res.json(req.body)
+})
+
 app.listen(port, () => {
   console.log('server started')
 });
