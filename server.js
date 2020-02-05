@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3789;
 
 // const connection = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:postgres/5432');
-const connection = new Sequelize(process.env.DATABASE_URL || 'ec2-54-246-89-234.eu-west-1.compute.amazonaws.com');
+const connection = new Sequelize(process.env.DATABASE_URL || 'https://ec2-54-246-89-234.eu-west-1.compute.amazonaws.com');
 
 app.get('/', (req, res)=>{
   console.log('hi there');
