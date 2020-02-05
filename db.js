@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.DATABASE_URL ||  'postgres://postgres:secret@localhost:5432/postgres');
+
 const User = sequelize.define('user', {
     email: {
       type: Sequelize.STRING,

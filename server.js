@@ -1,10 +1,7 @@
-const Sequelize = require('sequelize');
-const { Task, User } = require('./index');
+const { Task, User } = require('./db');
 
 const express = require('express');
-
 const app = express();
-
 const port = process.env.PORT || 3789;
 
 //const connection = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:postgres/5432');
