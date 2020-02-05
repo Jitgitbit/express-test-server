@@ -1,5 +1,5 @@
 const { Task, User } = require('./db');
-
+const bodyParser = require('body-parser')
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3789;
@@ -17,14 +17,14 @@ app.get('/users', async (req, res) => {
   res.send(users);
 })
 
-app.post('/echo', (req, res) => {
-  res.json(req.body)
-})
-
 app.listen(port, () => {
   console.log('server started')
 });
+app.use(bodyParser.json());
 
+app.post('/echo', (req, res) => {
+  res.json(req.body)
+})
 
 
 // ec2-54-246-89-234.eu-west-1.compute.amazonaws.com
